@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+{% block content %}
+    {% if inscriptions_liste_attente %}
+        <p>Mes inscriptions en liste d'attente :</p>
+        {% for inscription in inscriptions_liste_attente %}
+            <p> - {{ inscription }} </p>
+        {% endfor %}
+        <form method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit" class="btn btn-primary" id="submit">Valider</button>
+        </form>
+        <br>
+        <br>
+        Les inscriptions déjà passées ne seront pas supprimées.
+    {% else %}
+        <h3>Vous n'êtes inscrit sur aucune liste d'attente.</h3>
+    {% endif %}
+{% endblock %}

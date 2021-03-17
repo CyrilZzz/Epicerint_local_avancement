@@ -1,0 +1,20 @@
+{# https://getbootstrap.com/docs/5.0/forms/checks-radios/ #}
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+{% load humanize %}
+{% block title %}Connexion{% endblock %}
+{% block bodyId %}loginPage{% endblock %}
+{% block content %}
+    <p>Vous pouvez vous inscrire sur la liste d'attente s'il ne reste plus de créneaux disponibles.
+    Si le formulaire est vide, la liste d'attente est complète.
+    </p>
+    <div class="row">
+        <div class="col-12 col-md-4 login-form">
+            <form method="post">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button type="submit" class="btn btn-primary" id="submit">Valider</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

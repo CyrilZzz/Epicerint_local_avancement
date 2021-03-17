@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+    <br>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Date</th>
+
+            <th scope="col">Nombre total d'inscriptions</th>
+            <th scope="col">Nombre de femmes inscrites</th>
+            <th scope="col">Nombre d'hommes inscrits</th>
+            <th scope="col">Nombre maximum de colis prévus</th>
+            <th scope="col">Nombre d'inscrits file d'attente</th>
+            <th scope="col">Capacité maximale file d'attente</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for  date, nombre_colis_maximum, nombre_colis_total, nombre_colis_femme, nombre_colis_homme, nombre_maximal_beneficiaires_attente, nombre_beneficiaires_attente  in liste_date_colis %}
+            <tr>
+                <td>{{ date }}</td>
+                <td>{{ nombre_colis_total }}</td>
+                <td>{{ nombre_colis_femme }}</td>
+                <td>{{ nombre_colis_homme }}</td>
+                <td>{{ nombre_colis_maximum }}</td>
+                <td>{{ nombre_beneficiaires_attente }}</td>
+                <td>{{ nombre_maximal_beneficiaires_attente }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

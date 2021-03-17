@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+    <div>commande clavier pour télécharger en pdf : &nbsp; &nbsp; ctrl+p</div>
+    <br>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Distributions</th>
+            {% for k in longueur_maximale_liste_attente %}
+                <th scope="col">bénéficiaire {{ k }}</th>
+            {% endfor %}
+        </tr>
+        </thead>
+        <tbody>
+        {% for  distribution, liste_attente_distribution in tableau_double_entree %}
+            <tr>
+                <th scope="row">{{ distribution }}</th>
+                {% for inscription in liste_attente_distribution %}
+                    <td>{{ inscription.beneficiaire }} (
+                        {% if inscription.beneficiaire.beneficiaire.sexe == 'masculin' %}M {% else %}F {% endif %})
+                    </td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

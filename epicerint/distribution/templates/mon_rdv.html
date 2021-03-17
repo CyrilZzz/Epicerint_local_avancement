@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+{% block content %}
+    {% if rdvs_utilisateur %}
+        <h3>Mes rendez-vous :</h3>
+        {% for rdv in rdvs_utilisateur %}
+            <p> - {{ rdv }} </p>
+        {% endfor %}
+        <form method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit" class="btn btn-primary" id="submit">Valider</button>
+        </form>
+        <br>
+        <br>
+        Les rdv déjà passés ne seront pas supprimés.
+    {% else %}
+        <h3>Vous n'avez aucun rendez-vous</h3>
+    {% endif %}
+{% endblock %}

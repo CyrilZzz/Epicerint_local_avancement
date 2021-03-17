@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+{% block content %}
+    <p>Entrez une date pour connaître le nombre de bénéficiaires qui se sont inscrits à des créneaux à cette date.</p>
+    <p>Les bénéficiaires en liste d'attente ne sont pas inclus dans le décompte.</p>
+    <p>Format date: &nbsp; AAAA-MM-JJ &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;Exemple: &nbsp; 2021-05-17 &nbsp; => &nbsp; le 17 mai 2021</p>
+    <div class="row">
+        <div class="col-12 col-md-3 login-form">
+            <form method="post">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button type="submit" class="btn btn-primary" id="submit">Valider</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

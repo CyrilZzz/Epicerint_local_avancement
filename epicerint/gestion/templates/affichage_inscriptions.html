@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+    <div>commande clavier pour télécharger en pdf : &nbsp; &nbsp; ctrl+p</div>
+    <br>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">créneau horaire</th>
+            {% for k in nombre_maximal_global_inscriptions %}
+                <th scope="col">bénéficiaire {{ k }}</th>
+            {% endfor %}
+        </tr>
+        </thead>
+        <tbody>
+        {% for  date_debut, creneau_horaire in tableau_double_entree %}
+            <tr>
+                <th scope="row">{{ date_debut }}</th>
+                {% for inscription in creneau_horaire %}
+                    <td>{{ inscription.beneficiaire }} (
+                        {% if inscription.beneficiaire.beneficiaire.sexe == 'masculin' %}M {% else %}F {% endif %})
+                    </td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

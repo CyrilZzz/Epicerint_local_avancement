@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Bienvenue à epicer'INT{% endblock %}
+{% block content %}
+    {% for annonce in annonces %}
+        <section>
+            <h3>{{ annonce.titre }}</h3>
+            <p> Annonce rédigée le {{ annonce.date_publication }}
+            <p>{{ annonce.contenu }}</p>
+            {% for objet_image in annonce.images.all %}
+             <img src="{{ objet_image.image.url }}" width="500">
+            {% endfor %}
+        </section>
+        <br>
+    {% endfor %}
+{% endblock %}

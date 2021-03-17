@@ -1,0 +1,23 @@
+il faut transposer le tableau qui affiche les
+inscriptions avec Javascript.
+
+- Faire des tests et chercher d'éventuels bugs.
+- sécuriser le site pour éviter les attaques informatiques.
+- utiliser le CAS
+- mettre le site en ligne.
+- vérifier que le site ne plante pas s'il y a plein d'utilisateurs.
+- stocker les images des annonces au bon endroit pour la phase de production
+
+- changer homme/femmes en avez-vous besoin de protections menstruelles ?
+- traduction anglais.
+
+- faire un test avec l'équipe GATE après la mise en ligne.
+- imprimer facture hébergeur.
+- tester le site et le mettre le site en ligne avant lundi prochain
+
+https://stackoverflow.com/questions/50121539/run-function-at-a-specific-time-in-python
+fonction qui active le bouton de réservation utomatiquement.
+Ne pas stocker les images dans la base de données !
+Storing images in a database table is not recommended. There are too many disadvantages to this approach.
+Storing the image data in the table requires the database server to process and traffic huge amounts
+of data that could be better spent on processing it is best suited to. A file server can process such image files much better.
